@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { push } from 'connected-react-router'
 import LoginPage from '../../presentationals/login'
 import { login } from '../../actions/authActions'
 
@@ -26,7 +25,7 @@ class LoginContainer extends Component {
   }
 
   render() {
-    const { currentUser, login } = this.props
+    const { currentUser } = this.props
     return (
       <LoginPage
         currentUser={currentUser}
@@ -41,13 +40,7 @@ const mapStateToProps = state => ({
   currentUser: state.auth.loginStatus
 })
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      login
-    },
-    dispatch
-  )
+const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch)
 
 export default connect(
   mapStateToProps,

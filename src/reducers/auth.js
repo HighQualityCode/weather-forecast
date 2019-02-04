@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actionTypes'
+import { LOGIN } from '../actionTypes'
 
 const initialState = {
   password: 'test',
@@ -19,8 +19,6 @@ export default (state = initialState, action) => {
           loginStatus: false
         }
       }
-
-    case LOGOUT:
 
     default:
       return state
